@@ -4,6 +4,7 @@
   import Textfield from '@smui/textfield';
   import Chip, {Set, Icon, Checkmark, Text} from '@smui/chips';
   import Button, {Label} from '@smui/button';
+  import {costConstraints, propertyConstraints} from '../stores.js'
 
   import ControlPanel from '../components/ControlPanel.svelte';
 
@@ -15,9 +16,22 @@
 		advancedSearch = !advancedSearch;
 	}
 
+  function resetFilters(){
+    costConstraints.update((c)=>({
+      total: [NaN, NaN],
+      perMl: [NaN, NaN],
+      rank: [NaN, NaN]
+    }));
+
+    propertyConstraints.update((c)=>({
+      abv: [NaN, NaN]
+    }));
+  }
+
   document.addEventListener('keydown', function(e) {
     if (e.keyCode == 13) {
       sapper.goto('results');
+      resetFilters();
     }
   });
 </script>
@@ -35,7 +49,7 @@
     </div>
     <Textfield style="margin-top: 30px; width: 30vw" variant="outlined" bind:value={searchBox} label="Search" input$aria-controls="helper-text-outlined-a" input$aria-describedby="helper-text-outlined-a" />
     <div style="margin-top:35px; display: flex; width: 30vw; flex-direction: column">
-      <Button style="width: 100px" on:click={toggle}>Advanced</Button>
+      <Button style="width: 200px" on:click={toggle}>Advanced Filters</Button>
       {#if advancedSearch}
         <ControlPanel style='margin-top: 20px'/>
       {/if}

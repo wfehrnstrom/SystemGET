@@ -1,17 +1,42 @@
 <script>
   import Result from '../components/Result.svelte'
+  
 
-  export let results = [{
-    name: 'Klaura',
-    price: 25.60,
-    volume: 330,
-    abv: 0.052,
-    costPerAlcMl: 1.52,
-    effectiveness: 'Moderate',
-    group: 'Beer',
-    rank: 352,
-    organic: true
-  }];
+  export let results = [
+    {
+      name: 'Klaura',
+      price: 25.60,
+      volume: 330,
+      abv: 0.052,
+      costPerAlcMl: 1.52,
+      effectiveness: 'Moderate',
+      group: 'beer',
+      rank: 352,
+      organic: true
+    },
+    {
+      name: 'Cognac Leyrat',
+      price: 431,
+      volume: 700,
+      abv: 0.4,
+      costPerAlcMl: 1.53,
+      effectiveness: 'Moderate',
+      group: 'spirits',
+      rank: 353,
+      organic: false
+    },
+    {
+      name: 'Halmstad Brygghus',
+      price: 21.9,
+      volume: 330,
+      abv: 0.055,
+      costPerAlcMl: 1.51,
+      effectiveness: 'Moderate',
+      group: 'beer',
+      rank: 349,
+      organic: true
+    }
+  ];
 
   let total = 18000;
 </script>
