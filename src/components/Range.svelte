@@ -64,9 +64,9 @@
 
 <h2 style='margin-top: 30px'>{header}</h2>
 <div style='display: flex; justify-content: space-between; margin-bottom: 10px'>
-  <Textfield style='width: 13vw; height: 50px;' variant="outlined" bind:value={minField} label='Minimum {value}' on:change={checkValidRange}/>
+  <Textfield style='width: 45%; height: 50px;' variant="outlined" bind:value={minField} label='Minimum {value}' on:change={checkValidRange}/>
   <p>-</p>
-  <Textfield style='width: 13vw; height: 50px;' variant="outlined" bind:value={maxField} label='Maximum {value}' on:change={checkValidRange}/>
+  <Textfield style='width: 45%; height: 50px;' variant="outlined" bind:value={maxField} label='Maximum {value}' on:change={checkValidRange}/>
 </div>
 {#if err}
   <p style='font-size: 0.7em; color: #eb4034'>{err}</p>

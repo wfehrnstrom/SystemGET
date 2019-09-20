@@ -1,6 +1,11 @@
 <script>
 	import * as sapper from '../node_modules/@sapper/app';
-	sapper.goto('search');
+	try {
+		sapper.goto('./age');
+	}
+	catch(error){
+		console.log('error');
+	}
 </script>
 
 <svelte:head>
